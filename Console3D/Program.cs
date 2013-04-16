@@ -19,12 +19,9 @@ namespace Console3D
                                                         new Vector3(0,0,0),
                                                         new Vector3(0, 1, 0));
 
-            //Matrix WorldMatrix = Matrix.IdentityMatrix(4,4);
             Matrix WorldMatrix = Matrix.IdentityMatrix(4, 4);
 
-
             float rotate = 0.0f;
-
 
             while ( true )
             {
@@ -51,7 +48,9 @@ namespace Console3D
                 // ========================================================================
                 //                                     Fragment Processing....
                 // ========================================================================
-                // Determine the color of each pixel
+                // Determine the color of each pixel in each fragment
+                // Here we do not implement the stage of processing, because I still don't know how 
+                // to make a console app colorful.
 
 
                 // ========================================================================

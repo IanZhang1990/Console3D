@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using Console3D.Math;
 using Console3D.Graphics;
 

@@ -17,20 +17,31 @@ namespace Console3D.Graphics
     /// </summary>
     class CubeModel
     {
-        public Vector3[] Vertices = new Vector3[8];
-        public Vector3[] tempVertices = new Vector3[8];
-        public Vector3[] wvpVertices = new Vector3[8];
+        public Vector3[] Vertices = new Vector3[8 * 2];
+        public Vector3[] tempVertices = new Vector3[8*2];
+        public Vector3[] wvpVertices = new Vector3[8 * 2];
 
         public CubeModel()
         {
-            Vertices[0] = new Vector3(14, 20, 0);
-            Vertices[1] = new Vector3(34, 20, 0);
-            Vertices[2] = new Vector3(14, 20, 20);
-            Vertices[3] = new Vector3(34, 20, 20);
-            Vertices[4] = new Vector3(10-4, 0, 0);
-            Vertices[5] = new Vector3(30-4, 0, 0);
-            Vertices[6] = new Vector3(10-4, 0, 20);
-            Vertices[7] = new Vector3(30-4, 0, 20);
+            
+            Vertices[0] = new Vector3(10, 20, 0);
+            Vertices[1] = new Vector3(30, 20, 0);
+            Vertices[2] = new Vector3(10, 20, 20);
+            Vertices[3] = new Vector3(30, 20, 20);
+            Vertices[4] = new Vector3(10, 0, 0);
+            Vertices[5] = new Vector3(30, 0, 0);
+            Vertices[6] = new Vector3(10, 0, 20);
+            Vertices[7] = new Vector3(30, 0, 20);
+
+            Vertices[0 + 8] = new Vector3(0 + 20, 10 / 3 + 10, 10);
+            Vertices[1 + 8] = new Vector3(10 / 3 + 20, 20 / 3 + 10, 10);
+            Vertices[2 + 8] = new Vector3(20 / 3 + 20, 20 / 3 + 10, 10);
+            Vertices[3 + 8] = new Vector3(30 / 3 + 20, 0 + 10, 10);
+            Vertices[4 + 8] = new Vector3(0 + 20, -30 / 3 + 10, 10);
+            Vertices[5 + 8] = new Vector3(-30 / 3 + 20, 0 + 10, 10);
+            Vertices[6 + 8] = new Vector3(-20 / 3 + 20, 20 / 3 + 10, 10);
+            Vertices[7 + 8] = new Vector3(-10 / 3 + 20, 20 / 3 + 10, 10);
+
 
             wvpVertices[0] = new Vector3(0, 0, 0);
             wvpVertices[1] = new Vector3(0, 0, 0);
@@ -40,6 +51,14 @@ namespace Console3D.Graphics
             wvpVertices[5] = new Vector3(0, 0, 0);
             wvpVertices[6] = new Vector3(0, 0, 0);
             wvpVertices[7] = new Vector3(0, 0, 0);
+            wvpVertices[0 + 8] = new Vector3(0, 0, 0);
+            wvpVertices[1 + 8] = new Vector3(0, 0, 0);
+            wvpVertices[2 + 8] = new Vector3(0, 0, 0);
+            wvpVertices[3 + 8] = new Vector3(0, 0, 0);
+            wvpVertices[4 + 8] = new Vector3(0, 0, 0);
+            wvpVertices[5 + 8] = new Vector3(0, 0, 0);
+            wvpVertices[6 + 8] = new Vector3(0, 0, 0);
+            wvpVertices[7 + 8] = new Vector3(0, 0, 0);
 
 
             for (int i = 0; i < Vertices.Length; i++)
@@ -115,6 +134,17 @@ namespace Console3D.Graphics
 
             rster.RasterizeLine(frame, wvpVertices[6], wvpVertices[7]);        // line 7->8
             
+            
+            // * //////////////////// For my girl friend
+            rster.RasterizeLine(frame, wvpVertices[0 + 8], wvpVertices[1 + 8]);
+            rster.RasterizeLine(frame, wvpVertices[1 + 8], wvpVertices[2 + 8]);
+            rster.RasterizeLine(frame, wvpVertices[2 + 8], wvpVertices[3 + 8]);
+            rster.RasterizeLine(frame, wvpVertices[3 + 8], wvpVertices[4 + 8]);
+            rster.RasterizeLine(frame, wvpVertices[4 + 8], wvpVertices[5 + 8]);
+            rster.RasterizeLine(frame, wvpVertices[5 + 8], wvpVertices[6 + 8]);
+            rster.RasterizeLine(frame, wvpVertices[6 + 8], wvpVertices[7 + 8]);
+            rster.RasterizeLine(frame, wvpVertices[7 + 8], wvpVertices[0 + 8]);
+          
         }
 
 

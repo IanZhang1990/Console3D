@@ -41,3 +41,5 @@ You can simply build it with Visual Studio and run it to see the effect. Here is
              # o o o o o o o o o o                       o o
                                    o o o o o o o o o o o #
 
+
+I added a heart in the center of the cube. My girlfriend seemed quite happy when I sent her the executable.
